@@ -3,7 +3,7 @@
 import sqlite3
 from flask import Flask, render_template, request
 
-app = Flask(__name__)
+APP = Flask(__name__)
 
 def init_db():
     """Inisialisasi basis data dan membuat data pengguna awal."""
@@ -18,7 +18,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-@app.route("/", methods=["GET", "POST"])
+@APP.route("/", methods=["GET", "POST"])
 def index():
     """Menampilkan formulir login dan memproses autentikasi."""
     message = None
@@ -51,4 +51,4 @@ def index():
 
 if __name__ == "__main__":
     init_db()
-    app.run(host="0.0.0.0", port=5000)  # nosemgrep
+    APP.run(host="0.0.0.0", port=5000)  # nosemgrep
