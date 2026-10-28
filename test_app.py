@@ -1,3 +1,5 @@
+"""Modul unit test untuk aplikasi Flask."""
+
 from app import app
 
 def test_index_route():
